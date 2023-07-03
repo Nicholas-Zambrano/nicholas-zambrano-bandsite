@@ -1,2 +1,54 @@
-/*# sourceMappingURL=bio.css.map */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+h1,
+h2,
+p,
+body {
+  margin: 0;
+}
+
+.header {
+  background-color: #323232;
+  color: #FFFFFF;
+  width: 100%;
+}
+.header__title {
+  display: flex;
+  justify-content: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 3.2rem;
+}
+.header__subheading {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.hero {
+  height: 20rem;
+  background-image: url(../Assets/Images/hero-bio.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.hero__title {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+  margin-left: 2rem;
+}/*# sourceMappingURL=bio.css.map */
