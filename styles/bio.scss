@@ -102,3 +102,31 @@
     }
   }
 }
+.gallery{
+    background-color: $mercury;
+
+
+    &__title{
+        font-size: 2.4rem;
+        font-weight: 600;
+        margin: 2rem 0;
+        padding-left: 2rem;
+        padding-top: 2rem;
+    }
+
+    &__wrapper{
+        margin: 0 2rem;
+    }
+
+    &__images{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__img{
+        width: 28rem;
+        margin-bottom: 2rem;
+
+    }
+
+}

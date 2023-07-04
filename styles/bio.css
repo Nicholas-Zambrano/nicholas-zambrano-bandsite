@@ -121,4 +121,26 @@ body {
   font-size: 1.4rem;
   line-height: 1.8rem;
   font-weight: 600;
+}
+
+.gallery {
+  background-color: #E1E1E1;
+}
+.gallery__title {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin: 2rem 0;
+  padding-left: 2rem;
+  padding-top: 2rem;
+}
+.gallery__wrapper {
+  margin: 0 2rem;
+}
+.gallery__images {
+  display: flex;
+  flex-wrap: wrap;
+}
+.gallery__img {
+  width: 28rem;
+  margin-bottom: 2rem;
 }/*# sourceMappingURL=bio.css.map */
