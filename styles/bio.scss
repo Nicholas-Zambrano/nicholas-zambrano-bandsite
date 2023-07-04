@@ -1,6 +1,7 @@
 @use "./partials/resets";
 @use "./partials/mixins" as *;
 @use "./partials/variables" as *;
+@use "./partials/fonts" as *;
 
 
 .header{
@@ -8,12 +9,20 @@
     color: $white;
     width: 100%;
 
+    
+
     &__title{
         display: flex;
         justify-content: center;
         font-size: 2.4rem;
         font-weight: 700;
         line-height: 3.2rem;
+        height: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: normal;
+        
     }
 
     &__subheading{
@@ -21,13 +30,15 @@
         width: 100%;
         display: flex;
         justify-content: space-around;
+        font-size: 1.4rem;
     }
    
 } 
 
 .hero{
     height:20rem;
-    background-image: url(../Assets/Images/hero-bio.jpg);
+    width: 100%;
+    background-image: url("../Assets/Images/hero-bio.jpg");
     background-position: center;
     background-size: cover;
 
@@ -38,8 +49,48 @@
         align-items: center;
         color: white;
         margin-left: 2rem;
+        font-size: 2.4rem;
     }
 
 }
 
+.info{
+    width: 100%;
+    height:40rem;
+    // height: 100rem;
+    // overflow: hidden;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    // position: relative;
+    // top: 0;
+
+    &__wrapper{
+        // overflow: hidden;
+        // height: 40rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin-left: 2rem;
+        margin-right: 2rem;
+
+        // overflow: auto;
+        // height: auto;
+    }
+
+    &__title{
+        font-style: bold;
+        font-weight: 600;
+    }
+
+    &__paragraphs{
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+        font-weight: 600;
+    }
+
+
+
+}
 
