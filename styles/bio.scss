@@ -3,94 +3,102 @@
 @use "./partials/variables" as *;
 @use "./partials/fonts" as *;
 
+.header {
+  background-color: $BandSite-Black;
+  color: $white;
+  width: 100%;
 
-.header{
-    background-color: $BandSite-Black;
-    color: $white;
+  &__title {
+    display: flex;
+    justify-content: center;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 3.2rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: normal;
+  }
+
+  &__subheading {
+    height: 100%;
     width: 100%;
-
-    
-
-    &__title{
-        display: flex;
-        justify-content: center;
-        font-size: 2.4rem;
-        font-weight: 700;
-        line-height: 3.2rem;
-        height: 5rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: normal;
-        
-    }
-
-    &__subheading{
-        height: 100%;
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        font-size: 1.4rem;
-    }
-   
-} 
-
-.hero{
-    height:20rem;
-    width: 100%;
-    background-image: url("../Assets/Images/hero-bio.jpg");
-    background-position: center;
-    background-size: cover;
-
-    &__title{
-        height: 100%;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        color: white;
-        margin-left: 2rem;
-        font-size: 2.4rem;
-    }
-
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.4rem;
+  }
 }
 
-.info{
-    width: 100%;
-    height:40rem;
-    // height: 100rem;
+.hero {
+  height: 20rem;
+  width: 100%;
+  background-image: url("../Assets/Images/hero-bio.jpg");
+  background-position: center;
+  background-size: cover;
+
+  &__title {
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+    margin-left: 2rem;
+    font-size: 2.4rem;
+  }
+}
+
+.info {
+  width: 100%;
+  height: 40rem;
+  // height: 100rem;
+  // overflow: hidden;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  // position: relative;
+  // top: 0;
+
+  &__wrapper {
     // overflow: hidden;
-    height: auto;
+    // height: 40rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 2rem;
+    margin-right: 2rem;
+
+    // overflow: auto;
+    // height: auto;
+  }
+
+  &__image-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-style: bold;
+    font-weight: 600;
+    margin: 2rem 0;
+  }
+
+  &__bio {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    // position: relative;
-    // top: 0;
+  }
 
-    &__wrapper{
-        // overflow: hidden;
-        // height: 40rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        margin-left: 2rem;
-        margin-right: 2rem;
+  &__paragraphs {
+    margin-top: 2rem;
 
-        // overflow: auto;
-        // height: auto;
+    &--bold {
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+      font-weight: 600;
     }
-
-    &__title{
-        font-style: bold;
-        font-weight: 600;
-    }
-
-    &__paragraphs{
-        font-size: 1.4rem;
-        line-height: 1.8rem;
-        font-weight: 600;
-    }
-
-
-
+  }
 }
-
