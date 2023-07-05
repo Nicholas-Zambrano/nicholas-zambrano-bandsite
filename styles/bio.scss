@@ -130,3 +130,52 @@
     }
 
 }
+.footer{
+    background-color:$BandSite-Black ;
+    padding: 2rem 0;
+    color: white;
+    padding-left: 2rem;
+
+    &__h2{
+      font-weight: 600;
+    }
+    
+
+    &__images{
+      display: flex;
+      width: 13rem;
+      height: 4.5rem;
+      justify-content: space-between;
+    }
+
+
+
+    &__contents{
+      display: flex;
+      flex-direction: column;
+    }
+
+
+    &__paragraphs{
+      margin: 2rem 0;
+      font-size: 1.3rem;
+
+
+      &--styling{
+        // font-style: bold;
+        font-weight: 600;
+      }
+    }
+
+    img{
+        margin-top: 2rem;
+    }
+
+    &__bottom-h2{
+      font-weight: normal;
+      margin-top: 5rem;
+    }
+
+
+}
+

@@ -143,4 +143,38 @@ body {
 .gallery__img {
   width: 28rem;
   margin-bottom: 2rem;
+}
+
+.footer {
+  background-color: #323232;
+  padding: 2rem 0;
+  color: white;
+  padding-left: 2rem;
+}
+.footer__h2 {
+  font-weight: 600;
+}
+.footer__images {
+  display: flex;
+  width: 13rem;
+  height: 4.5rem;
+  justify-content: space-between;
+}
+.footer__contents {
+  display: flex;
+  flex-direction: column;
+}
+.footer__paragraphs {
+  margin: 2rem 0;
+  font-size: 1.3rem;
+}
+.footer__paragraphs--styling {
+  font-weight: 600;
+}
+.footer img {
+  margin-top: 2rem;
+}
+.footer__bottom-h2 {
+  font-weight: normal;
+  margin-top: 5rem;
 }/*# sourceMappingURL=bio.css.map */
