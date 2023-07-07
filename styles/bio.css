@@ -46,6 +46,12 @@ body {
   color: #FFFFFF;
   width: 100%;
 }
+@media screen and (min-width: 768px) {
+  .header__wrap {
+    display: flex;
+    margin-left: 5rem;
+  }
+}
 .header__title {
   display: flex;
   justify-content: center;
@@ -62,8 +68,51 @@ body {
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   font-size: 1.4rem;
+}
+@media screen and (min-width: 768px) {
+  .header__subheading {
+    justify-content: space-evenly;
+    width: 40%;
+  }
+}
+.header__h3-bio {
+  font-weight: 600;
+  color: white;
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+}
+@media screen and (min-width: 768px) {
+  .header__h3-bio {
+    width: auto;
+  }
+}
+.header__h3-shows {
+  font-weight: normal;
+  color: #E1E1E1;
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+}
+@media screen and (min-width: 768px) {
+  .header__h3-shows {
+    width: auto;
+  }
+}
+.header__link {
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+  width: auto;
+}
+.header__link--bio {
+  border-bottom: 3px white solid;
+}
+@media screen and (min-width: 768px) {
+  .header__link--bio {
+    border-bottom: 3px white solid;
+  }
 }
 
 .hero {
@@ -72,6 +121,13 @@ body {
   background-image: url("../Assets/Images/hero-bio.jpg");
   background-position: center;
   background-size: cover;
+}
+@media screen and (min-width: 768px) {
+  .hero {
+    height: 45rem;
+    background-position: center;
+    background-size: cover;
+  }
 }
 .hero__title {
   height: 100%;
@@ -82,6 +138,13 @@ body {
   margin-left: 2rem;
   font-size: 2.4rem;
 }
+@media screen and (min-width: 768px) {
+  .hero__title {
+    font-size: 6rem;
+    padding-left: 2rem;
+    font-weight: 600;
+  }
+}
 
 .info {
   width: 100%;
@@ -91,12 +154,19 @@ body {
   flex-direction: column;
   justify-content: space-around;
 }
-.info__wrapper {
+@media screen and (min-width: 768px) {
+  .info__wrapper {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+}
+.info__container {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   margin-left: 2rem;
   margin-right: 2rem;
+  margin-bottom: 3rem;
 }
 .info__image-wrapper {
   width: 100%;
@@ -109,6 +179,12 @@ body {
   font-weight: 600;
   margin: 2rem 0;
 }
+@media screen and (min-width: 768px) {
+  .info__title {
+    margin: 3rem 3rem;
+    font-size: 3.6rem;
+  }
+}
 .info__bio {
   display: flex;
   flex-direction: column;
@@ -119,8 +195,14 @@ body {
 }
 .info__paragraphs--bold {
   font-size: 1.4rem;
-  line-height: 1.8rem;
+  line-height: 2.4rem;
   font-weight: 600;
+}
+@media screen and (min-width: 768px) {
+  .info__paragraphs--quote {
+    font-size: 2rem;
+    line-height: 2.8rem;
+  }
 }
 
 .gallery {
