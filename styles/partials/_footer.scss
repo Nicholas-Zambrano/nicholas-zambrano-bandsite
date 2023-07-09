@@ -65,6 +65,9 @@
       display: flex;
       justify-content: space-between;
     }
+    @include desktop{
+        width: 65%;
+    }
   }
 
   &__paragraphs-wrapper {
@@ -80,8 +83,11 @@
       margin: 0 3.6rem;
     }
     @include desktop {
-      max-width: 52%;
-      margin: 0 18rem;
+    //   max-width: 52%;
+      margin: 0 12rem;
+      max-width: 1044px;
+      margin: auto;
+
     }
   }
 
@@ -94,7 +100,8 @@
     }
 
     @include desktop {
-      width: 92rem;
+      width: 100%;
+      justify-content: space-between;
     }
   }
   // removed the bandsite for mobile

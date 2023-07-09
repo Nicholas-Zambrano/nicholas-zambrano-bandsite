@@ -5,20 +5,22 @@
 @use "./partials/header" as *;
 @use "./partials/hero" as *;
 @use "./partials/footer" as *;
+@use "./partials/info"as *;
 
 .header {
   @include headerCode;
 
-  // &__wrap{
-  //   max-width: 1044px;
-  //   margin: auto ;
-  //   }
 }
 
 .hero {
   @include heroCode;
 
 }
+
+.info{
+  @include AboutTheMusicians
+}
+
 .footer {
   @include footerCode
 }
