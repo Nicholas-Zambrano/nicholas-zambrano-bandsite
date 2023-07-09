@@ -4,133 +4,21 @@
 @use "./partials/fonts" as *;
 @use "./partials/header" as *;
 @use "./partials/hero" as *;
+@use "./partials/footer" as *;
 
 .header {
   @include headerCode;
+
+  // &__wrap{
+  //   max-width: 1044px;
+  //   margin: auto ;
+  //   }
 }
 
 .hero {
   @include heroCode;
+
 }
 .footer {
-  background-color: $BandSite-Black;
-  padding: 2rem 2rem;
-  color: white;
-
-  @include tablet {
-    padding: 4rem 0;
-  }
-
-  &__h2 {
-    font-size: 2.4rem;
-    font-weight: 600;
-    @include tablet {
-      font-size: 3.6rem;
-      font-weight: 600;
-    }
-  }
-
-  &__images {
-    display: flex;
-    width: 13rem;
-    height: 4.5rem;
-    justify-content: space-between;
-  }
-
-  &__contents {
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__paragraphs {
-    margin: 2rem 0;
-    font-size: 1.3rem;
-
-    &--styling {
-      // font-style: bold;
-      font-weight: 600;
-    }
-  }
-
-  img {
-    margin-top: 2rem;
-
-    @include tablet {
-      margin: 0;
-      padding: 1rem 1.5rem;
-    }
-  }
-
-  &__bottom-h2 {
-    font-weight: normal;
-    margin-top: 5rem;
-
-    // removed the BANDSITE
-    @include tablet {
-      display: none;
-    }
-  }
-
-  &__info {
-    @include tablet {
-      display: flex;
-      justify-content: space-between;
-    }
-  }
-
-  &__paragraphs-wrapper {
-    @include tablet {
-      display: flex;
-      flex-direction: column;
-    }
-  }
-
-  &__big-wrapper {
-    max-width: 87%;
-    @include tablet {
-      margin: 0 3.6rem;
-    }
-    @include desktop {
-      max-width: 52%;
-      margin: 0 18rem;
-    }
-  }
-
-  &__wrapper {
-    @include tablet {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      width: 73rem;
-    }
-
-    @include desktop {
-      width: 92rem;
-    }
-  }
-  // removed the bandsite for mobile
-  &__bandsite {
-    font-size: 2.4rem;
-    font-weight: 400;
-
-    @include mobile {
-      display: none;
-    }
-  }
-
-  // modifying the header and icons wrapper
-  &__header-icons {
-    @include tablet {
-      display: flex;
-      gap: 2rem;
-    }
-  }
-  &__bandsite-wrapper {
-    @include tablet {
-      padding-left: 19.5rem;
-    }
-    @include desktop {
-      padding-left: 42rem;
-    }
-  }
+  @include footerCode
 }
