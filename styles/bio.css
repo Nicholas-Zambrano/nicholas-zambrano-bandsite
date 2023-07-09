@@ -41,6 +41,47 @@ body {
   font-family: "AvenirNextLTPro", sans-serif;
 }
 
+.hero {
+  height: 20rem;
+  width: 100%;
+  background-image: url("../Assets/Images/hero-bio.jpg");
+  background-position: center;
+  background-size: cover;
+}
+@media screen and (min-width: 768px) {
+  .hero {
+    height: 45rem;
+    background-position: center;
+    background-size: cover;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero {
+    height: 55rem;
+  }
+}
+.hero__title {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+  margin-left: 2rem;
+  font-size: 2.4rem;
+}
+@media screen and (min-width: 768px) {
+  .hero__title {
+    font-size: 6rem;
+    padding-left: 2rem;
+    font-weight: 600;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero__title {
+    padding-left: 10rem;
+  }
+}
+
 .header {
   background-color: #323232;
   color: #FFFFFF;
@@ -147,6 +188,11 @@ body {
     height: 45rem;
     background-position: center;
     background-size: cover;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero {
+    height: 55rem;
   }
 }
 .hero__title {
