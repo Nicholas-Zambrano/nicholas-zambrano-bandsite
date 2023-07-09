@@ -6,6 +6,7 @@
   color: $white;
   width: 100%;
 
+  //  the header wrap
   &__wrap {
     @include tablet {
       display: flex;
@@ -43,6 +44,7 @@
     }
   }
 
+  //   wrapping the subheading 'Biography' and 'shows'
   &__subheading {
     height: 100%;
     width: 100%;
@@ -52,11 +54,12 @@
     font-size: 1.4rem;
 
     @include tablet {
-      // padding-left: 4rem;
       justify-content: space-evenly;
       width: 30rem;
     }
   }
+
+  //   Biography heading
   &__h3-bio {
     font-weight: 600;
     color: white;
@@ -67,6 +70,7 @@
       width: auto;
     }
   }
+  //   'Shows' subheading
   &__h3-shows {
     font-weight: normal;
     color: $mercury;
@@ -79,7 +83,7 @@
     }
   }
 
-  // this is the link
+  // this is the links
   &__link {
     text-decoration-line: none;
     width: auto;
@@ -92,41 +96,10 @@
       }
     }
   }
-}
 
-.hero {
-  height: 20rem;
-  width: 100%;
-  background-image: url("../Assets/Images/hero-bio.jpg");
-  background-position: center;
-  background-size: cover;
-
-  @include tablet {
-    height: 45rem;
-    background-position: center;
-    background-size: cover;
-  }
-  @include desktop {
-    height: 55rem;
-  }
-
-  &__title {
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+  //   this is for the top title Bandsite
+  &__title-link {
+    text-decoration: none;
     color: white;
-    margin-left: 2rem;
-    font-size: 2.4rem;
-
-    @include tablet {
-      font-size: 6rem;
-      padding-left: 2rem;
-      font-weight: 600;
-    }
-
-    @include desktop {
-      padding-left: 10rem;
-    }
   }
 }

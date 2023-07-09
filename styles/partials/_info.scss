@@ -9,6 +9,7 @@
   flex-direction: column;
   justify-content: space-around;
 
+  //   wrapping the picure and paragraphs underneath
   &__wrapper {
     @include tablet {
       padding-left: 8rem;
@@ -22,14 +23,18 @@
       margin: auto;
     }
   }
+  
 
   &__container {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    margin-bottom: 3rem;
+    margin-left: 1.6rem;
+    margin-right: 1.6rem;
+    margin-bottom: auto;
+    @include tablet {
+      margin-bottom: 3.6rem;
+    }
   }
 
   &__image-wrapper {
@@ -55,12 +60,14 @@
     }
   }
 
+  //   wrapping the info content
   &__bio {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
   }
 
+  //   modifing space between each div paragraph
   &__paragraphs {
     margin-top: 2rem;
 
@@ -74,12 +81,14 @@
       }
     }
 
+    // This if for the paragprah in bold
     &--bold {
       font-size: 1.4rem;
       line-height: 2.4rem;
       font-weight: 600;
     }
 
+    //  the two large paragraphs
     &--large {
       @include tablet {
         width: 48%;
@@ -88,6 +97,7 @@
       }
     }
 
+    // Paragraph with quoatation marks
     &--quote {
       @include tablet {
         font-size: 2.2rem;

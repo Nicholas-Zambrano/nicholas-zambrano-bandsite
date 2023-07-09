@@ -10,6 +10,7 @@
     padding: 4rem 0;
   }
 
+  //   Modifying the size of footer header
   &__h2 {
     font-size: 2.4rem;
     font-weight: 600;
@@ -19,6 +20,7 @@
     }
   }
 
+  //Modifying the social images
   &__images {
     display: flex;
     width: 13rem;
@@ -26,71 +28,77 @@
     justify-content: space-between;
   }
 
+  //  Asjusting the header and images to be aligned
   &__contents {
     display: flex;
     flex-direction: column;
   }
 
+  //  Styling the paragraphs
   &__paragraphs {
-    margin: 2rem 0;
+    margin: 1.5rem 0;
     font-size: 1.3rem;
 
     &--styling {
-      // font-style: bold;
       font-weight: 600;
     }
   }
 
+  // The social images
   img {
     margin-top: 2rem;
 
     @include tablet {
       margin: 0;
-      padding: 1rem 1.5rem;
+      padding: 1.5rem 1.5rem;
     }
   }
 
+  //   The Bansite h2 at the bottom for the mobile
   &__bottom-h2 {
     font-weight: normal;
     margin-top: 5rem;
 
-    // removed the BANDSITE
+    // removed the bottom BANDSITE for the tablet and desktop
     @include tablet {
       display: none;
     }
   }
 
+  // the paragraphs container
   &__info {
     @include tablet {
       display: flex;
       justify-content: space-between;
     }
-    @include desktop{
-        width: 65%;
+    @include desktop {
+      width: 65%;
     }
   }
 
+  //   Wrapping the paragraphs
   &__paragraphs-wrapper {
     @include tablet {
       display: flex;
       flex-direction: column;
+      margin: 2rem 0;
     }
   }
 
+  //   The main wrapper, which i gave max-width so that the position reamins the same
   &__big-wrapper {
     max-width: 87%;
     @include tablet {
       margin: 0 3.6rem;
     }
     @include desktop {
-    //   max-width: 52%;
       margin: 0 12rem;
       max-width: 1044px;
       margin: auto;
-
     }
   }
 
+  //   this is for the top line of the footer
   &__wrapper {
     @include tablet {
       display: flex;
@@ -121,6 +129,8 @@
       gap: 2rem;
     }
   }
+
+  //  this is for the top bandsite header
   &__bandsite-wrapper {
     @include tablet {
       padding-left: 19.5rem;

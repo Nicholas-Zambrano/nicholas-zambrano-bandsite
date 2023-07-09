@@ -7,6 +7,7 @@
     padding: 1.6rem 0;
   }
 
+  // The title 'Photo Gallery'
   &__title {
     font-size: 2.4rem;
     font-weight: 600;
@@ -20,7 +21,6 @@
       padding-top: 0;
     }
     @include desktop {
-      //   padding-left: 18rem;
       padding: 5rem 0;
 
       max-width: 1044px;
@@ -28,6 +28,7 @@
     }
   }
 
+  // wrapper for the pictures
   &__wrapper {
     margin: 0 2rem;
     @include tablet {
@@ -45,23 +46,25 @@
     }
   }
 
+//   div clas for the images
   &__images {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
 
+//   Each image
   &__img {
     width: 28rem;
     padding-bottom: 2rem;
     @include tablet {
-      // width: 21.5rem;
-      width: 31.5%;
+      width: 31%;
       display: flex;
       justify-content: space-around;
     }
   }
 
+//    Making the heading and image wrapper to have a max width
   &__heading,
   &__wrapper {
     max-width: 100%;

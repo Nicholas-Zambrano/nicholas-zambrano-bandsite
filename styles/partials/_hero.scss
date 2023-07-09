@@ -2,6 +2,8 @@
 @use "./mixins" as *;
 
 @mixin heroCode {
+    
+  // wrapping the hero
   height: 20rem;
   width: 100%;
   background-image: url("../Assets/Images/hero-bio.jpg");
@@ -39,4 +41,3 @@
     }
   }
 }
-

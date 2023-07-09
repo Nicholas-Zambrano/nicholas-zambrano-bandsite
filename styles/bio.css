@@ -41,47 +41,6 @@ body {
   font-family: "AvenirNextLTPro", sans-serif;
 }
 
-.hero {
-  height: 20rem;
-  width: 100%;
-  background-image: url("../Assets/Images/hero-bio.jpg");
-  background-position: center;
-  background-size: cover;
-}
-@media screen and (min-width: 768px) {
-  .hero {
-    height: 45rem;
-    background-position: center;
-    background-size: cover;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .hero {
-    height: 55rem;
-  }
-}
-.hero__title {
-  height: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  color: white;
-  margin-left: 2rem;
-  font-size: 2.4rem;
-}
-@media screen and (min-width: 768px) {
-  .hero__title {
-    font-size: 6rem;
-    padding-left: 2rem;
-    font-weight: 600;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .hero__title {
-    padding-left: 10rem;
-  }
-}
-
 .header {
   background-color: #323232;
   color: #FFFFFF;
@@ -177,6 +136,10 @@ body {
     border-bottom: 3px white solid;
   }
 }
+.header__title-link {
+  text-decoration: none;
+  color: white;
+}
 
 .hero {
   height: 20rem;
@@ -246,9 +209,14 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  margin-left: 2rem;
-  margin-right: 2rem;
-  margin-bottom: 3rem;
+  margin-left: 1.6rem;
+  margin-right: 1.6rem;
+  margin-bottom: auto;
+}
+@media screen and (min-width: 768px) {
+  .info__container {
+    margin-bottom: 3.6rem;
+  }
 }
 .info__image-wrapper {
   width: 100%;
@@ -375,7 +343,7 @@ body {
 }
 @media screen and (min-width: 768px) {
   .gallery__img {
-    width: 31.5%;
+    width: 31%;
     display: flex;
     justify-content: space-around;
   }
@@ -421,7 +389,7 @@ body {
   flex-direction: column;
 }
 .footer__paragraphs {
-  margin: 2rem 0;
+  margin: 1.5rem 0;
   font-size: 1.3rem;
 }
 .footer__paragraphs--styling {
@@ -433,7 +401,7 @@ body {
 @media screen and (min-width: 768px) {
   .footer img {
     margin: 0;
-    padding: 1rem 1.5rem;
+    padding: 1.5rem 1.5rem;
   }
 }
 .footer__bottom-h2 {
@@ -460,6 +428,7 @@ body {
   .footer__paragraphs-wrapper {
     display: flex;
     flex-direction: column;
+    margin: 2rem 0;
   }
 }
 .footer__big-wrapper {
