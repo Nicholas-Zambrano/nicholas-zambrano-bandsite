@@ -6,6 +6,7 @@
 @use "./partials/hero" as *;
 @use "./partials/footer" as *;
 @use "./partials/info"as *;
+@use "./partials/gallery" as *;
 
 .header {
   @include headerCode;
@@ -18,9 +19,13 @@
 }
 
 .info{
-  @include AboutTheMusicians
+  @include AboutTheMusicians;
+}
+
+.gallery{
+  @include galleryCode;
 }
 
 .footer {
-  @include footerCode
+  @include footerCode;
 }

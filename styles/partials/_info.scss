@@ -1,113 +1,110 @@
-
 @use "./mixins" as *;
 @use "./variables" as *;
 
-@mixin AboutTheMusicians{
-    .info {
-        width: 100%;
-        height: 40rem;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-      
-        &__wrapper {
-          @include tablet {
-            padding-left: 8rem;
-            padding-right: 8rem;
-          }
-      
-          //  this is for 'About the musicians picture'
-          @include desktop {
-            padding: 0 18rem;
-            max-width: 1280px;
-            margin: auto;
-          }
-        }
-      
-        &__container {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-evenly;
-          margin-left: 2rem;
-          margin-right: 2rem;
-          margin-bottom: 3rem;
-        }
-      
-        &__image-wrapper {
-          width: 100%;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-        }
-      
-        &__title {
-          font-style: bold;
-          font-weight: 600;
-          margin: 2rem 0;
-      
-          // modifying the title 'About the Musicians'
-          @include tablet {
-            margin: 3.6rem 1.6rem;
-            font-size: 3.6rem;
-            padding-left: 9rem;
-      
-            max-width: 1280px;
-            margin: 3.6rem auto;
-          }
-        }
-      
-        &__bio {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-around;
-        }
-      
-        &__paragraphs {
-          margin-top: 2rem;
-      
-          // this is for the bees knees subheader
-          &--subheader {
-            font-weight: 600;
-      
-            @include tablet {
-              font-size: 2.4rem;
-              margin-top: 3.6rem;
-            }
-          }
-      
-          &--bold {
-            font-size: 1.4rem;
-            line-height: 2.4rem;
-            font-weight: 600;
-          }
-      
-          &--large {
-            @include tablet {
-              width: 48%;
-              font-size: 1.4rem;
-              line-height: 2rem;
-            }
-          }
-      
-          &--quote {
-            @include tablet {
-              font-size: 2.2rem;
-              line-height: 2.8rem;
-            }
-      
-            @include desktop {
-              width: 75%;
-            }
-          }
-        }
-      
-        // make the large paragraphs sit side by side
-        &__mainText {
-          @include tablet {
-            display: flex;
-            justify-content: space-between;
-          }
-        }
+@mixin AboutTheMusicians {
+  width: 100%;
+  height: 40rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  &__wrapper {
+    @include tablet {
+      padding-left: 8rem;
+      padding-right: 8rem;
+    }
+
+    //  this is for 'About the musicians picture'
+    @include desktop {
+      padding: 0 18rem;
+      max-width: 1280px;
+      margin: auto;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  &__image-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-style: bold;
+    font-weight: 600;
+    margin: 2rem 0;
+
+    // modifying the title 'About the Musicians'
+    @include tablet {
+      margin: 3.6rem 1.6rem;
+      font-size: 3.6rem;
+      padding-left: 9rem;
+
+      max-width: 1280px;
+      margin: 3.6rem auto;
+    }
+  }
+
+  &__bio {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  &__paragraphs {
+    margin-top: 2rem;
+
+    // this is for the bees knees subheader
+    &--subheader {
+      font-weight: 600;
+
+      @include tablet {
+        font-size: 2.4rem;
+        margin-top: 3.6rem;
       }
+    }
+
+    &--bold {
+      font-size: 1.4rem;
+      line-height: 2.4rem;
+      font-weight: 600;
+    }
+
+    &--large {
+      @include tablet {
+        width: 48%;
+        font-size: 1.4rem;
+        line-height: 2rem;
+      }
+    }
+
+    &--quote {
+      @include tablet {
+        font-size: 2.2rem;
+        line-height: 2.8rem;
+      }
+
+      @include desktop {
+        width: 75%;
+      }
+    }
+  }
+
+  // make the large paragraphs sit side by side
+  &__mainText {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 }
