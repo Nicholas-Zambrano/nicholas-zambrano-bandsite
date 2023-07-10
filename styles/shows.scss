@@ -1,0 +1,19 @@
+@use "./partials/resets";
+@use "./partials/mixins" as *;
+@use "./partials/variables" as *;
+@use "./partials/fonts" as *;
+@use "./partials/header" as *;
+@use "./partials/footer" as *;
+
+
+.header {
+  @include headerCode;
+}
+
+.shows{
+    height: 50rem;
+}
+
+.footer{
+    @include footerCode;
+}
