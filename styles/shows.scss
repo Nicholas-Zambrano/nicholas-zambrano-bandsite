@@ -4,16 +4,46 @@
 @use "./partials/fonts" as *;
 @use "./partials/header" as *;
 @use "./partials/footer" as *;
-
+@use "./partials/hero" as *;
 
 .header {
   @include headerCode;
+
+  //   Adding border bottom for the 'shows' heading
+  &__link--shows {
+    border-bottom: 3px solid white;
+    }
+
+  //   removing the border bottom for 'biography' heading
+  &__link--bio {
+    border-bottom: none;
+  }
+
+// making the 'shows' in bold as that page is active
+  &__h3-shows-page{
+    color: white;
+    font-weight: 600;
+  }
+
+  // making 'bio' a normal font- that page is inactive
+  &__h3-bio-shows-page{
+    color: $mercury;
+    font-weight: normal;
+    
+  }
 }
 
-.shows{
-    height: 50rem;
+.hero{
+  
+    @include heroCode;
+    
+
 }
 
-.footer{
-    @include footerCode;
+.shows {
+//   height: 50rem;
+}
+
+.footer {
+  @include footerCode;
 }
