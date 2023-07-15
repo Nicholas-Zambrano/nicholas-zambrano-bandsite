@@ -23,7 +23,7 @@ const commentsArray = [
 
 const commentContainerEl = document.querySelector(".comments__container");
 
-const fillComments = (comment) => {
+const displayComment = (comment) => {
   const articleEl = document.createElement("article");
   articleEl.classList.add("comments__article");
 
@@ -57,13 +57,14 @@ const fillComments = (comment) => {
   writingComments.innerText = comment.comment;
   mainDiv.appendChild(writingComments); // appending the comment underneath the name and date
 
-
   articleEl.appendChild(imgwrapper);
 
   articleEl.appendChild(mainDiv);
   // articleEl.appendChild(writingComments);
 
   commentContainerEl.appendChild(articleEl);
+
+  //  you can use inserbefore but then you need to swap the tables manually in the original array
 };
 
 // need to for loop through the array
@@ -71,6 +72,65 @@ const fillComments = (comment) => {
 for (let i = 0; i < commentsArray.length; i++) {
   comment = commentsArray[i];
 
-  // call the function within the loop:
-  fillComments(comment);
+  // call the function within the loop, to print ach key value pair:
+  displayComment(comment);
 }
+
+// const handlingSubmit = (event) => {
+//   event.preventDefault();
+//   const formEl = event.target;
+
+//   // now push the comment to the new comment arrray:
+//   const addedComment = {
+//     name: formEl.fname.value,
+//     comment: formEl.fcomment.value,
+//   };
+
+//   commentsArray.push(addedComment);
+// };
+// console.log(commentsArray);
+
+// // initialise and selct the form from index html
+// const formEl = document.querySelector(".form");
+// formEl.addEventListener("submit",handlingSubmit);
+
+// need to create a new list and push it to the original list
+
+// need to create a function that will print the comments
+
+const handlingSubmit = (action) => {
+  // when pressing the button, page shouldnt refresh
+  action.preventDefault(); // we prevented the page from refreshing
+  console.log("hello");
+
+  // need to target the submit event
+  const formClass = action.target;
+  console.log(formClass); // this prints the form class 'form'
+
+  // when submitting the button: we need to push a new array that contains the comment to the existing array
+
+  const newComments = [
+    {
+      // selecting the class'formClass' , then selecting the name 'fname' and then getting the value of the input
+      name: formClass.fname.value,
+      date: new Date().toLocaleDateString(), // this gives teh updated time date
+      comment: formClass.fcomment.value,
+    },
+  ];
+
+  // console.log(newComments); // this print the array , with the comments e.g {name:"nico", comment:"hello"}
+
+  // we want to push this into the original array:
+
+  for (i = 0; i < newComments.length; i++) {
+    const eachValue = newComments[i];
+    commentsArray.unshift(eachValue); // i have pushed it to the original array
+    console.log(commentsArray); // this prints the update array:
+    displayComment(eachValue); // each time it runs it calls the function
+  }
+};
+
+const formEl = document.querySelector(".form");
+// were are adding an event listener to the selected class, and apply a function on the second argument when '.form' class is clicked
+formEl.addEventListener("submit", handlingSubmit);
+// console.log("hello");

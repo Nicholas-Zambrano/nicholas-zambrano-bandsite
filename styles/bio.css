@@ -399,6 +399,17 @@ body {
 .comments {
   margin: 2rem 2rem;
 }
+.comments .form__field {
+  margin-bottom: 2rem;
+}
+.comments .form__fbutton {
+  width: 25.5rem;
+  height: 5rem;
+  border-radius: 0.5rem;
+  color: white;
+  background-color: #323232;
+  font-size: 1.8rem;
+}
 .comments__article {
   display: flex;
   justify-content: space-evenly;

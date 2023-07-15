@@ -161,7 +161,7 @@ const fill_shows = (show) => {
   // now appending the small div to the main div wrapper:
   section.appendChild(divDate);
   section.appendChild(divVenue);
-  section.appendChild(divLocation)
+  section.appendChild(divLocation);
 
 
   const buttonWrapperEl = document.createElement("div");
@@ -190,11 +190,14 @@ const fill_shows = (show) => {
 
 };
 
-for (let i = 0; i < shows.length; i++) {
-  // iterating though each object
-  const show = shows[i];
-  // and call the function within the loop
-  fill_shows(show);
-}
+// for (let i = 0; i < shows.length; i++) {
+//   // iterating though each object
+//   const show = shows[i];
+//   // and call the function within the loop
+//   fill_shows(show);
+//   // console.log(show);
 
-// fill_shows();
+  
+// }
+console.log(fill_shows(shows[0]));
+// 

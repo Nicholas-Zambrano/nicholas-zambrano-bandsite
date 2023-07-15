@@ -8,6 +8,21 @@
     // this is the small circle on the side
     margin: 2rem 2rem;
 
+    .form{
+        &__field{
+            margin-bottom: 2rem;
+        }
+
+        &__fbutton{
+            width: 25.5rem;
+            height: 5rem;
+            border-radius:0.5rem;
+            color: white;
+            background-color: $BandSite-Black;
+            font-size: 1.8rem;
+        }
+    }
+
     &__article{
         display: flex;
         justify-content: space-evenly;

@@ -157,40 +157,50 @@
         <img src="" alt="" />
       </div>
 
-      <form action="form">
+      <form class="form">
         <div class="form__field">
           <label for="fname">Name</label> <br />
           <input
             type="text"
             name="fname"
             id="fname"
-            placeholder="Enter your name"
+            placeholder=" Enter your name"
           />
         </div>
         <!-- <br> -->
 
         <div class="form__field">
-          <label for="fcomment">Comment</label> <br />
-          <input
+          <label for="fcomment">Comment</label>
+          <!-- <textarea
             type="text"
             name="fcomment"
             id="fcomment"
             placeholder="Add a new comment"
-          />
+          /> -->
+
+          <textarea
+            name="fcomment"
+            id="fcomment"
+            cols="30"
+            rows="5"
+            placeholder=" Add a new comment"
+          ></textarea>
         </div>
 
-        <div class="form__field">
-          <button class="fbutton" type="submit">Comment</button>
-        </div>
+        <!-- <div class="form__field"> -->
+        <button class="form__fbutton" type="submit">COMMENT</button>
+        <!-- </div> -->
       </form>
 
-      <section class="comments__container">
+      <section class="comments__container"></section>
 
+      <section class="newComments">
+        <div class="comments_added"></div>
       </section>
     </section>
 
     <!-- <section class="comments"> -->
-      <!-- <section class="comments__container">
+    <!-- <section class="comments__container">
 
       </section> -->
 
