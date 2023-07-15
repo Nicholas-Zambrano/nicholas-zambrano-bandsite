@@ -81,58 +81,88 @@ const fill_shows = (show) => {
   article.classList.add("shows__article");
 
   // now need to create a wrapper : for each show info
-  const div = document.createElement("div");
-  div.classList.add("shows__wrapper");
+  const section = document.createElement("section");
+  section.classList.add("shows__wrapper");
+
+  // THIS IS FOR THE UNORDERED LIST:
+  
+  // const unorderedListEl = document.createElement("ul");
+  // create class name: 
+  // unorderedListEl.classList.add("shows__items");
+  // div.appendChild(unorderedListEl)
+
+  // going to create 3 small divs:
+  const divDate = document.createElement("div");
+  divDate.classList.add("shows__smallDiv");
+
+  const divVenue = document.createElement("div");
+  divVenue.classList.add("shows__smallDiv");
+
+  const divLocation = document.createElement("div");
+  divLocation.classList.add("shows__smallDiv");
 
   // now create an element for the 'date'
   const h3El = document.createElement("h3");
   h3El.classList.add("shows__h3");
-  h3El.innerText = "date";
+  h3El.innerText = "DATE";
   // console.log(h3El);
-  div.append(h3El); // appending this h3 to the div wrapper
+  // now appending the date div to that
+  divDate.appendChild(h3El); // appending this h3 to the div wrapper
+  //APPENDING IT TO UL INSTEAD
+  // unorderedListEl.append(h3El);
 
   // now adding the date of the show:
-  const yearEl = document.createElement("label");
+  const yearEl = document.createElement("p");
   // add a class:
-  yearEl.classList.add("show__year");
+  yearEl.classList.add("shows__year","shows__pTag");
   // now assigning the year(modifying the text) to the value of the key 'date'
   yearEl.innerText = show.date;
-  div.append(yearEl); // appending the label to the div
+  divDate.appendChild(yearEl); // appending the label to the small div
+  // unorderedListEl.append(yearEl);
+
 
   const h3VenueEl = document.createElement("h3");
   h3VenueEl.classList.add("shows__h3");
-  h3VenueEl.innerText = "venue";
+  h3VenueEl.innerText = "VENUE";
   // now append the h3 'venue' to the div
-  div.append(h3VenueEl);
+  divVenue.appendChild(h3VenueEl);
+  // unorderedListEl.append(h3VenueEl);
+
 
   // now create the venue from the objects
 
   // create the element
-  const venueTagEl = document.createElement("label");
-  // add a class to the element
-  venueTagEl.classList.add("show__venue");
+  const venueTagEl = document.createElement("p");
+  // add a class to the element,also added a common class 'shows__label'
+  venueTagEl.classList.add("shows__venue","shows__pTag");
   // then modify the created element
   venueTagEl.innerText = show.venue;
   // now append the venue value to the div:
-  div.append(venueTagEl);
+  divVenue.appendChild(venueTagEl);
 
   // now create the h3 location
   const h3Location = document.createElement("h3");
   // add class to the element created
   h3Location.classList.add("shows__h3");
   // modify the class,
-  h3Location.innerText = "location";
+  h3Location.innerText = "LOCATION";
   // now append the h3 tag to the div
-  div.append(h3Location);
+  divLocation.appendChild(h3Location);
 
   // now create the actual location
-  const locationTagEl = document.createElement("label");
+  const locationTagEl = document.createElement("p");
   // add a class to the created element
-  locationTagEl.classList.add("shoes__location");
+  locationTagEl.classList.add("shows__location", "shows__pTag");
   // now modify the element by assigning it to the value of the object
   locationTagEl.innerText = show.location;
   // now append the class to the div
-  div.append(locationTagEl);
+  divLocation.appendChild(locationTagEl);
+
+  // now appending the small div to the main div wrapper:
+  section.appendChild(divDate);
+  section.appendChild(divVenue);
+  section.appendChild(divLocation)
+
 
   const buttonWrapperEl = document.createElement("div");
   buttonWrapperEl.classList.add("shows__button-wrapper")
@@ -145,7 +175,7 @@ const fill_shows = (show) => {
 
 
   // add the wrapper div to the article
-  article.appendChild(div);
+  article.appendChild(section);
 
   // then addin the button wrapper underneath
   article.append(buttonWrapperEl)
@@ -167,4 +197,4 @@ for (let i = 0; i < shows.length; i++) {
   fill_shows(show);
 }
 
-fill_shows();
+// fill_shows();

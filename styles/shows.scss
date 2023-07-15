@@ -8,40 +8,104 @@
 
 .header {
   @include headerCode;
+  
 
   //   Adding border bottom for the 'shows' heading
   &__link--shows {
     border-bottom: 3px solid white;
-    }
+  }
 
   //   removing the border bottom for 'biography' heading
   &__link--bio {
     border-bottom: none;
   }
 
-// making the 'shows' in bold as that page is active
-  &__h3-shows-page{
+  // making the 'shows' in bold as that page is active
+  &__h3-shows-page {
     color: white;
     font-weight: 600;
   }
 
   // making 'bio' a normal font- that page is inactive
-  &__h3-bio-shows-page{
+  &__h3-bio-shows-page {
     color: $mercury;
     font-weight: normal;
-    
   }
 }
 
-.hero{
-  
-    @include heroCode;
-    
-
+.hero {
+  @include heroCode;
 }
 
 .shows {
-//   height: 50rem;
+  //   height: 50rem;
+  // margin: 0 2rem;
+
+  &__title {
+    margin: 3rem 2rem;
+    font-weight: 600;
+    font-size: 3.6rem;
+  }
+
+  &__article {
+    border-bottom: 2px solid $mercury;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+
+  &__article:hover {
+    background-color: $Alabaster;
+  }
+
+  &__wrapper {
+    margin: 0 2rem;
+    padding: 1rem 0;
+
+    // this is the shows wrapper for the section tag
+    @include tablet {
+      display: flex;
+      width: 70%;
+      justify-content: space-around;
+    }
+  }
+
+  &__h3 {
+    color: silver;
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+  // this is the common label tag
+  &__pTag {
+    font-size: 1.8rem;
+    // font-weight: 500;
+  }
+  // this is for the year of each show
+  &__year {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: black;
+  }
+
+  &__button-wrapper {
+    margin: 2rem 2rem;
+  }
+
+  &__button {
+    background-color: $BandSite-Black;
+    color: white;
+    font-size: 2rem;
+    line-height: 2rem;
+    height: 5rem;
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+
+  // &__smallDiv{
+  //   gap:
+  // }
 }
 
 .footer {

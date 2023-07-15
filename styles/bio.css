@@ -396,6 +396,39 @@ body {
   }
 }
 
+.comments {
+  margin: 2rem 2rem;
+}
+.comments__article {
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 2px solid #E1E1E1;
+}
+.comments__image-wrapper {
+  height: 3.6rem;
+  width: 3.6rem;
+  background-color: #E1E1E1;
+  border-radius: 50%;
+  margin: 2rem 0rem;
+}
+.comments__nameDate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.comments__name {
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+.comments__date {
+  color: grey;
+}
+.comments__main-wrapper {
+  width: 30rem;
+  padding-left: 2rem;
+  padding-bottom: 2rem;
+}
+
 .footer {
   background-color: #323232;
   padding: 2rem 2rem;
