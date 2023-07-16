@@ -227,15 +227,44 @@ body {
   font-weight: 600;
   height: auto;
 }
+@media screen and (min-width: 768px) {
+  .hero .hero__title-small {
+    font-size: 2.6rem;
+  }
+}
 .hero .hero__title--shows {
   font-size: 3rem;
+}
+@media screen and (min-width: 768px) {
+  .hero .hero__title--shows {
+    font-size: 6rem;
+    width: 60rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .hero .hero__music {
+    margin: 0 2rem;
+  }
 }
 .hero .hero__music iframe {
   height: 15rem;
   width: 100%;
   padding: 0 2rem;
 }
+@media screen and (min-width: 768px) {
+  .hero .hero__music iframe {
+    width: 49rem;
+  }
+}
 
+@media screen and (min-width: 768px) {
+  .shows__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .shows__title {
   margin: 3rem 2rem;
   font-weight: 600;
@@ -255,7 +284,7 @@ body {
 }
 .shows__wrapper {
   margin: 0 2rem;
-  padding: 1rem 0;
+  padding: 0rem 1rem;
 }
 @media screen and (min-width: 768px) {
   .shows__wrapper {
@@ -264,10 +293,22 @@ body {
     justify-content: space-around;
   }
 }
+@media screen and (min-width: 768px) {
+  .shows__smallDiv {
+    width: 16rem;
+    display: flex;
+    align-items: center;
+  }
+}
 .shows__h3 {
   color: silver;
   font-size: 1.4rem;
   font-weight: 600;
+}
+@media screen and (min-width: 768px) {
+  .shows__h3 {
+    display: none;
+  }
 }
 .shows__pTag {
   font-size: 1.8rem;
@@ -277,8 +318,13 @@ body {
   font-weight: 600;
   color: black;
 }
+@media screen and (min-width: 768px) {
+  .shows__venue {
+    margin: 0 2rem;
+  }
+}
 .shows__button-wrapper {
-  margin: 2rem 2rem;
+  margin: 2rem 3rem;
 }
 .shows__button {
   background-color: #323232;
@@ -288,6 +334,33 @@ body {
   height: 5rem;
   width: 100%;
   border-radius: 0.5rem;
+}
+@media screen and (min-width: 768px) {
+  .shows__button {
+    width: 15rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .shows__topWrapper {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .shows__topWrapper {
+    display: flex;
+    width: 67rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .shows__topH3 {
+    width: 16rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: silver;
+  }
+  .shows__topH3--venue {
+    padding-left: 2rem;
+  }
 }
 
 .footer {

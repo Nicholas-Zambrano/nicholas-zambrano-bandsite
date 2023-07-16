@@ -151,49 +151,53 @@
     </section>
 
     <section class="comments">
-      <h1>Join the Conversation</h1>
+      <div class="comments__title">
+        <h1>Join the Conversation</h1>
+      </div>
+      <section class="comments__inputWrapper">
+        <form class="form">
+          <div class="form__img"></div>
 
-      <form class="form">
-        <div class="form__img"></div>
+          <section class="form__wrapper">
+            <div class="form__field">
+              <label for="fname" class="form__label">NAME</label> <br />
+              <input
+                type="text"
+                name="fname"
+                id="fname"
+                placeholder=" Enter your name"
+                class="form__nameInput"
+              />
+            </div>
+            <!-- <br> -->
 
-        <section class="form__wrapper">
-          <div class="form__field">
-            <label for="fname"  class="form__label">NAME</label> <br />
-            <input
-              type="text"
-              name="fname"
-              id="fname"
-              placeholder=" Enter your name"
-              class="form__nameInput"
-            />
-          </div>
-          <!-- <br> -->
-
-          <div class="form__field">
-            <label class = "form__label" for="fcomment">COMMENT</label>
-            <!-- <textarea
+            <div class="form__field">
+              <label class="form__label" for="fcomment">COMMENT</label>
+              <!-- <textarea
             type="text"
             name="fcomment"
             id="fcomment"
             placeholder="Add a new comment"
           /> -->
 
-            <textarea
-            class="form__commentInput"
-              name="fcomment"
-              id="fcomment"
-              cols="25"
-              rows="5"
-              placeholder=" Add a new comment"
-            ></textarea>
-          </div>
+              <textarea
+                class="form__commentInput"
+                name="fcomment"
+                id="fcomment"
+                cols="25"
+                rows="5"
+                placeholder=" Add a new comment"
+              ></textarea>
+            </div>
 
-          <!-- <div class="form__field"> -->
-          <button class="form__fbutton" type="submit">COMMENT</button>
-          <!-- </div> -->
-        </section>
-      </form>
-
+            <!-- <div class="form__field"> -->
+            <div class="form__buttonWrapper">
+              <button class="form__fbutton" type="submit">COMMENT</button>
+              <!-- </div> -->
+            </div>
+          </section>
+        </form>
+      </section>
       <section class="comments__container"></section>
 
       <section class="newComments">

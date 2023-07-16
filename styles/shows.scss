@@ -8,7 +8,6 @@
 
 .header {
   @include headerCode;
-  
 
   //   Adding border bottom for the 'shows' heading
   &__link--shows {
@@ -41,6 +40,16 @@
   //   height: 50rem;
   // margin: 0 2rem;
 
+  // this is the shows container
+  &__container {
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
   &__title {
     margin: 3rem 2rem;
     font-weight: 600;
@@ -49,6 +58,7 @@
 
   &__article {
     border-bottom: 2px solid $mercury;
+    // margin: 2rem 0;
 
     @include tablet {
       display: flex;
@@ -62,7 +72,7 @@
 
   &__wrapper {
     margin: 0 2rem;
-    padding: 1rem 0;
+    padding: 0rem 1rem;
 
     // this is the shows wrapper for the section tag
     @include tablet {
@@ -72,10 +82,24 @@
     }
   }
 
+  &__smallDiv {
+    @include tablet {
+      width: 16rem;
+      display: flex;
+      align-items: center;
+      // justify-content: center;
+    }
+  }
+
   &__h3 {
     color: silver;
     font-size: 1.4rem;
     font-weight: 600;
+
+    // making all the headers disappear
+    @include tablet {
+      display: none;
+    }
   }
   // this is the common label tag
   &__pTag {
@@ -89,8 +113,14 @@
     color: black;
   }
 
+  &__venue {
+    @include tablet {
+      margin: 0 2rem;
+    }
+  }
+
   &__button-wrapper {
-    margin: 2rem 2rem;
+    margin: 2rem 3rem;
   }
 
   &__button {
@@ -100,12 +130,42 @@
     line-height: 2rem;
     height: 5rem;
     width: 100%;
+    // margin-left: 1rem;
+    // padding-right: 5rem;
     border-radius: 0.5rem;
+
+    @include tablet{
+      width: 15rem;
+    }
   }
 
-  // &__smallDiv{
-  //   gap:
-  // }
+  &__topWrapper {
+    @include mobile {
+      display: none;
+    }
+    @include tablet {
+      display: flex;
+      width: 67rem;
+      // justify-content: space-around
+    }
+  }
+
+  // now modifying the top headers 'date, venue and location'
+  &__topH3 {
+    @include tablet {
+      width: 16rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: silver;
+
+      &--venue {
+        padding-left: 2rem;
+      }
+      // &--location{
+      //   padding-left: 0.6rem
+      // }
+    }
+  }
 }
 
 .footer {

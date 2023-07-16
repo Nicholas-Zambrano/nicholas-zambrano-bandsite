@@ -79,16 +79,37 @@
       font-size: 1.8rem;
       font-weight: 600;
       height: auto;
+
+      @include tablet{
+        font-size: 2.6rem;
+      }
     }
 
     &__title--shows {
       font-size: 3rem;
+
+      @include tablet{
+        font-size: 6rem;
+        width: 60rem;
+      }
+    }
+
+    // wrapper for the iframe
+    &__music{
+      @include tablet{
+        margin: 0 2rem;
+      }
     }
 
     &__music iframe {
       height: 15rem;
       width: 100%;
       padding: 0 2rem;
+
+      @include tablet{
+        width: 49rem;
+      }
     }
+    
   }
 }
