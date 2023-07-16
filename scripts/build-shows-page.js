@@ -130,12 +130,8 @@ const fill_shows = (show) => {
   // then addin the button wrapper underneath
   article.append(buttonWrapperEl);
 
-
-
   // now add the article to the DOM
   containerEl.appendChild(article);
-
-
 };
 
 for (let i = 0; i < shows.length; i++) {
@@ -166,28 +162,26 @@ topDiv.appendChild(topHeaderLocation);
 
 containerEl.insertBefore(topDiv, containerEl.firstChild);
 
-
 const rowClick = (event) => {
   const article = event.currentTarget; // accessing that event
-  
+
   // Initially the articles are not in a selected state
-  const articles = document.querySelectorAll('.shows__article');
+  const articles = document.querySelectorAll(".shows__article");
   articles.forEach((article) => {
-    article.classList.remove('shows__selected');
+    article.classList.remove("shows__selected");
   });
 
   // Add the "selected" class to the clicked article
-  article.classList.add('shows__selected');
+  article.classList.add("shows__selected");
   // console.log("hello"); // testing purposes
 };
 
 // Rest of your code
 
 // Add event listener for clicking
-const articles = document.querySelectorAll('.shows__article');
+const articles = document.querySelectorAll(".shows__article");
 // looping through each article
 articles.forEach((article) => {
-  // when that article is selected call the function 
-  article.addEventListener('click', rowClick);
+  // when that article is selected call the function
+  article.addEventListener("click", rowClick);
 });
-
