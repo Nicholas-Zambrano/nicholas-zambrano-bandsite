@@ -176,7 +176,6 @@ const rowClick = (event) => {
   // console.log("hello"); // testing purposes
 };
 
-// Rest of your code
 
 // Add event listener for clicking
 const articles = document.querySelectorAll(".shows__article");
