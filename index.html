@@ -153,43 +153,45 @@
     <section class="comments">
       <h1>Join the Conversation</h1>
 
-      <div>
-        <img src="" alt="" />
-      </div>
-
       <form class="form">
-        <div class="form__field">
-          <label for="fname">Name</label> <br />
-          <input
-            type="text"
-            name="fname"
-            id="fname"
-            placeholder=" Enter your name"
-          />
-        </div>
-        <!-- <br> -->
+        <div class="form__img"></div>
 
-        <div class="form__field">
-          <label for="fcomment">Comment</label>
-          <!-- <textarea
+        <section class="form__wrapper">
+          <div class="form__field">
+            <label for="fname"  class="form__label">NAME</label> <br />
+            <input
+              type="text"
+              name="fname"
+              id="fname"
+              placeholder=" Enter your name"
+              class="form__nameInput"
+            />
+          </div>
+          <!-- <br> -->
+
+          <div class="form__field">
+            <label class = "form__label" for="fcomment">COMMENT</label>
+            <!-- <textarea
             type="text"
             name="fcomment"
             id="fcomment"
             placeholder="Add a new comment"
           /> -->
 
-          <textarea
-            name="fcomment"
-            id="fcomment"
-            cols="30"
-            rows="5"
-            placeholder=" Add a new comment"
-          ></textarea>
-        </div>
+            <textarea
+            class="form__commentInput"
+              name="fcomment"
+              id="fcomment"
+              cols="25"
+              rows="5"
+              placeholder=" Add a new comment"
+            ></textarea>
+          </div>
 
-        <!-- <div class="form__field"> -->
-        <button class="form__fbutton" type="submit">COMMENT</button>
-        <!-- </div> -->
+          <!-- <div class="form__field"> -->
+          <button class="form__fbutton" type="submit">COMMENT</button>
+          <!-- </div> -->
+        </section>
       </form>
 
       <section class="comments__container"></section>

@@ -399,11 +399,51 @@ body {
 .comments {
   margin: 2rem 2rem;
 }
+.comments h1 {
+  font-weight: 600;
+}
+.comments .form {
+  display: flex;
+  border-bottom: 2px solid #E1E1E1;
+  height: 28rem;
+  margin-top: 2rem;
+}
+.comments .form__img {
+  height: 3.6rem;
+  width: 3.6rem;
+  background: url(../../Assets/Images/Mohan-muruge.jpg);
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  margin: 2rem 0rem;
+}
+.comments .form__wrapper {
+  padding-left: 2rem;
+}
 .comments .form__field {
   margin-bottom: 2rem;
 }
+.comments .form__label {
+  color: silver;
+  font-size: 1.3rem;
+  font-weight: 520;
+  position: relative;
+  bottom: 0.5rem;
+}
+.comments .form__nameInput {
+  width: 100%;
+  height: 4rem;
+  background-color: #FAFAFA;
+  border: 2px solid #E1E1E1;
+  border-radius: 0.5rem;
+}
+.comments .form__commentInput {
+  width: 100%;
+  background-color: #FAFAFA;
+  border: 2px solid #E1E1E1;
+}
 .comments .form__fbutton {
-  width: 25.5rem;
+  width: 100%;
   height: 5rem;
   border-radius: 0.5rem;
   color: white;

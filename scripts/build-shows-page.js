@@ -190,14 +190,14 @@ const fill_shows = (show) => {
 
 };
 
-// for (let i = 0; i < shows.length; i++) {
-//   // iterating though each object
-//   const show = shows[i];
-//   // and call the function within the loop
-//   fill_shows(show);
-//   // console.log(show);
+for (let i = 0; i < shows.length; i++) {
+  // iterating though each object
+  const show = shows[i];
+  // and call the function within the loop
+  fill_shows(show);
+  // console.log(show);
 
   
-// }
-console.log(fill_shows(shows[0]));
+}
+// console.log(fill_shows(shows[0]));
 // 

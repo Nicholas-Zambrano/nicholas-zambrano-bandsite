@@ -20,8 +20,6 @@ const commentsArray = [
   },
 ];
 
-// select the comments container
-
 const commentContainerEl = document.querySelector(".comments__container");
 
 const displayComment = (comment) => {
