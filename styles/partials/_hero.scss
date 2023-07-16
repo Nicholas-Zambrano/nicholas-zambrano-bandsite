@@ -7,7 +7,6 @@
   width: 100%;
   background-image: url("../Assets/Images/hero-bio.jpg");
 
-
   background-position: center;
   background-size: cover;
 
@@ -15,7 +14,10 @@
   &--shows {
     // background-image: url(../../Assets/Images/hero-shows.jpg);
 
-    background: linear-gradient((0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15))),url("../../Assets/Images/hero-shows.jpg");
+    background: linear-gradient(
+        (0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15))
+      ),
+      url("../../Assets/Images/hero-shows.jpg");
     background-position: center;
     background-size: cover;
     height: 35rem;
@@ -36,6 +38,14 @@
   }
   @include desktop {
     height: 55rem;
+  }
+
+  // putting the title and music pic in display flex
+  &__titles-pic {
+    @include desktop {
+      display: flex;
+      justify-content: space-evenly;
+    }
   }
 
   &__title {
@@ -71,6 +81,10 @@
       display: flex;
       flex-direction: column;
       gap: 2rem;
+
+      @include desktop {
+        width: 55rem;
+      }
     }
 
     // this is for the shows page
@@ -80,24 +94,37 @@
       font-weight: 600;
       height: auto;
 
-      @include tablet{
+      @include tablet {
         font-size: 2.6rem;
+      }
+
+      @include desktop {
+        margin: 0;
+        padding: 0 5rem;
       }
     }
 
     &__title--shows {
       font-size: 3rem;
 
-      @include tablet{
+      @include tablet {
         font-size: 6rem;
         width: 60rem;
+      }
+
+      @include desktop {
+        padding: 0 5rem;
       }
     }
 
     // wrapper for the iframe
-    &__music{
-      @include tablet{
+    &__music {
+      @include tablet {
         margin: 0 2rem;
+      }
+      @include desktop {
+        display: flex;
+        align-items: flex-end;
       }
     }
 
@@ -106,10 +133,9 @@
       width: 100%;
       padding: 0 2rem;
 
-      @include tablet{
+      @include tablet {
         width: 49rem;
       }
     }
-    
   }
 }

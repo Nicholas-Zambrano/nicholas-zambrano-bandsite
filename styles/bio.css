@@ -175,6 +175,12 @@ body {
     height: 55rem;
   }
 }
+@media screen and (min-width: 1280px) {
+  .hero__titles-pic {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
 .hero__title {
   height: 100%;
   display: flex;
@@ -207,6 +213,11 @@ body {
   flex-direction: column;
   gap: 2rem;
 }
+@media screen and (min-width: 1280px) {
+  .hero .hero__wrapper {
+    width: 55rem;
+  }
+}
 .hero .hero__title-small {
   color: white;
   font-size: 1.8rem;
@@ -218,6 +229,12 @@ body {
     font-size: 2.6rem;
   }
 }
+@media screen and (min-width: 1280px) {
+  .hero .hero__title-small {
+    margin: 0;
+    padding: 0 5rem;
+  }
+}
 .hero .hero__title--shows {
   font-size: 3rem;
 }
@@ -227,9 +244,20 @@ body {
     width: 60rem;
   }
 }
+@media screen and (min-width: 1280px) {
+  .hero .hero__title--shows {
+    padding: 0 5rem;
+  }
+}
 @media screen and (min-width: 768px) {
   .hero .hero__music {
     margin: 0 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero .hero__music {
+    display: flex;
+    align-items: flex-end;
   }
 }
 .hero .hero__music iframe {

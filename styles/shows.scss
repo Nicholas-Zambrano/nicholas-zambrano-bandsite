@@ -40,6 +40,19 @@
   //   height: 50rem;
   // margin: 0 2rem;
 
+  //  this is the whole shows content
+  @include desktop {
+    display: flex;
+    justify-content: space-between;
+    width: 50rem;
+  }
+  @include desktop {
+    width: auto;
+    justify-content: space-evenly;
+    max-width: 1044px;
+    margin: auto;
+  }
+
   // this is the shows container
   &__container {
     @include tablet {
@@ -47,13 +60,33 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      margin-bottom: 4rem;
+    }
+    @include desktop{
+      margin-top: 6rem;
     }
   }
 
   &__title {
-    margin: 3rem 2rem;
+    margin: 3rem 3rem;
     font-weight: 600;
     font-size: 3.6rem;
+
+    @include tablet {
+      // margin: 3rem 4rem;
+      max-width: $tablet-breakpoint;
+      padding: 5rem 3rem;
+      font-size: 4rem;
+
+      margin: auto;
+      // margin: 1044px;
+    }
+
+    @include desktop {
+      margin: 0;
+      // padding-left: 2rem;
+      padding-right: 20rem;
+    }
   }
 
   &__article {
@@ -134,7 +167,7 @@
     // padding-right: 5rem;
     border-radius: 0.5rem;
 
-    @include tablet{
+    @include tablet {
       width: 15rem;
     }
   }
@@ -145,7 +178,7 @@
     }
     @include tablet {
       display: flex;
-      width: 67rem;
+      width: 69rem;
       // justify-content: space-around
     }
   }
