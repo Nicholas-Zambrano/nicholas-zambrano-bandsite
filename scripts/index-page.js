@@ -120,4 +120,3 @@ const handlingSubmit = (action) => {
 const formEl = document.querySelector(".form");
 // were are adding an event listener to the selected class, and apply a function on the second argument when '.form' class is clicked
 formEl.addEventListener("submit", handlingSubmit);
-// console.log("hello");

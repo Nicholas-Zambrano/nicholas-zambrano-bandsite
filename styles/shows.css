@@ -425,6 +425,12 @@ body {
     padding-left: 2rem;
   }
 }
+.shows__selected {
+  background-color: #E1E1E1;
+}
+.shows__selected:hover {
+  background-color: #E1E1E1;
+}
 
 .footer {
   background-color: #323232;

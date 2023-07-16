@@ -36,8 +36,6 @@ const shows = [
 const containerEl = document.querySelector(".shows__container");
 // console.log(containerEl);
 
-// this function will
-// * need to add a parameter!!!
 const fill_shows = (show) => {
   // creating an article
   const article = document.createElement("article");
@@ -64,11 +62,8 @@ const fill_shows = (show) => {
   const h3El = document.createElement("h3");
   h3El.classList.add("shows__h3");
   h3El.innerText = "DATE";
-  // console.log(h3El);
   // now appending the date div to that
   divDate.appendChild(h3El); // appending this h3 to the div wrapper
-  //APPENDING IT TO UL INSTEAD
-  // unorderedListEl.append(h3El);
 
   // now adding the date of the show:
   const yearEl = document.createElement("p");
@@ -135,8 +130,12 @@ const fill_shows = (show) => {
   // then addin the button wrapper underneath
   article.append(buttonWrapperEl);
 
+
+
   // now add the article to the DOM
   containerEl.appendChild(article);
+
+
 };
 
 for (let i = 0; i < shows.length; i++) {
@@ -144,27 +143,51 @@ for (let i = 0; i < shows.length; i++) {
   const show = shows[i];
   // and call the function within the loop
   fill_shows(show);
-  // console.log(show);
 }
 
-// create a div 
+// create a div , these for top 3 headers 'DATE, VENUE,LOCATION'
 const topDiv = document.createElement("div");
-topDiv.classList.add("shows__topWrapper")
+topDiv.classList.add("shows__topWrapper");
 
 const topHeaderDate = document.createElement("h3");
-topHeaderDate.classList.add("shows__topH3")
+topHeaderDate.classList.add("shows__topH3");
 topHeaderDate.innerText = "DATE";
 topDiv.appendChild(topHeaderDate);
 
 const topHeaderVenue = document.createElement("h3");
-topHeaderVenue.classList.add("shows__topH3","shows__topH3--venue"); // added a modifier
-topHeaderVenue.innerText ="VENUE";
+topHeaderVenue.classList.add("shows__topH3", "shows__topH3--venue"); // added a modifier
+topHeaderVenue.innerText = "VENUE";
 topDiv.appendChild(topHeaderVenue);
 
 const topHeaderLocation = document.createElement("h3");
-topHeaderLocation.classList.add("shows__topH3", "shows__topH3--location")
+topHeaderLocation.classList.add("shows__topH3", "shows__topH3--location");
 topHeaderLocation.innerHTML = "LOCATION";
 topDiv.appendChild(topHeaderLocation);
 
-containerEl.insertBefore(topDiv,containerEl.firstChild)
+containerEl.insertBefore(topDiv, containerEl.firstChild);
+
+
+const rowClick = (event) => {
+  const article = event.currentTarget; // accessing that event
+  
+  // Initially the articles are not in a selected state
+  const articles = document.querySelectorAll('.shows__article');
+  articles.forEach((article) => {
+    article.classList.remove('shows__selected');
+  });
+
+  // Add the "selected" class to the clicked article
+  article.classList.add('shows__selected');
+  // console.log("hello"); // testing purposes
+};
+
+// Rest of your code
+
+// Add event listener for clicking
+const articles = document.querySelectorAll('.shows__article');
+// looping through each article
+articles.forEach((article) => {
+  // when that article is selected call the function 
+  article.addEventListener('click', rowClick);
+});
 

@@ -199,6 +199,14 @@
       // }
     }
   }
+
+// when table is selcted change the colour
+  &__selected{
+    background-color: $mercury;
+  }
+  &__selected:hover{
+    background-color: $mercury;
+  }
 }
 
 .footer {
