@@ -1,10 +1,11 @@
 const commentsArray = [
   {
-    name: "Connor Walton",
-    date: "02/17/2021",
+    name: "Miles Acosta",
+    date: "12/20/2020",
     comment:
-      "This is art. This is inexplicable magic expressed in the purest way, verything that makes up this majestic work deserves reveerence. Let us appreciate this for what it is and what it contains.",
+      "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
   },
+
   {
     name: "Emilie Beach",
     date: "02/17/2021",
@@ -12,10 +13,10 @@ const commentsArray = [
       "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
   },
   {
-    name: "Miles Acosta",
-    date: "12/20/2020",
+    name: "Connor Walton",
+    date: "02/17/2021",
     comment:
-      "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
+      "This is art. This is inexplicable magic expressed in the purest way, verything that makes up this majestic work deserves reveerence. Let us appreciate this for what it is and what it contains.",
   },
 ];
 
@@ -65,6 +66,9 @@ const displayComment = (comment) => {
   commentContainerEl.appendChild(articleEl);
 
   //  you can use inserbefore but then you need to swap the tables manually in the original array
+  // making that article with new input comment be placed above the first element (i.e the first defaul comment)
+  // making that 'articleEl' be the first child of the commentContainer
+  commentContainerEl.insertBefore(articleEl, commentContainerEl.firstChild);
 };
 
 // need to for loop through the array
@@ -75,24 +79,6 @@ for (let i = 0; i < commentsArray.length; i++) {
   // call the function within the loop, to print ach key value pair:
   displayComment(comment);
 }
-
-// const handlingSubmit = (event) => {
-//   event.preventDefault();
-//   const formEl = event.target;
-
-//   // now push the comment to the new comment arrray:
-//   const addedComment = {
-//     name: formEl.fname.value,
-//     comment: formEl.fcomment.value,
-//   };
-
-//   commentsArray.push(addedComment);
-// };
-// console.log(commentsArray);
-
-// // initialise and selct the form from index html
-// const formEl = document.querySelector(".form");
-// formEl.addEventListener("submit",handlingSubmit);
 
 // need to create a new list and push it to the original list
 
@@ -113,7 +99,7 @@ const handlingSubmit = (action) => {
     {
       // selecting the class'formClass' , then selecting the name 'fname' and then getting the value of the input
       name: formClass.fname.value,
-      date: new Date().toLocaleDateString(), // this gives teh updated time date
+      date: new Date().toLocaleDateString(), // this gives the updated time date
       comment: formClass.fcomment.value,
     },
   ];
@@ -125,9 +111,12 @@ const handlingSubmit = (action) => {
   for (i = 0; i < newComments.length; i++) {
     const eachValue = newComments[i];
     commentsArray.unshift(eachValue); // i have pushed it to the original array
-    console.log(commentsArray); // this prints the update array:
+    console.log(commentsArray); // this prints the updated array:
     displayComment(eachValue); // each time it runs it calls the function
   }
+
+  // need to clear the input fields once submitting the button
+  formClass.reset();
 };
 
 const formEl = document.querySelector(".form");
