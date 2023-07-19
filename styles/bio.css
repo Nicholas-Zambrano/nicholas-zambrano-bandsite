@@ -149,7 +149,7 @@ body {
   background-size: cover;
 }
 .hero--shows {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../../Assets/Images/hero-shows.jpg");
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../Assets/Images/hero-shows.jpg");
   background-position: center;
   background-size: cover;
   height: 35rem;
