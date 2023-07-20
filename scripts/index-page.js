@@ -1,24 +1,35 @@
-const commentsArray = [
-  {
-    name: "Miles Acosta",
-    date: "12/20/2020",
-    comment:
-      "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  },
+const API_BASE_URL = "https://project-1-api.herokuapp.com";
+const API_KEY = "8141f882-7414-460c-ae38-99f5be2e81da";
 
-  {
-    name: "Emilie Beach",
-    date: "02/17/2021",
-    comment:
-      "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-  },
-  {
-    name: "Connor Walton",
-    date: "02/17/2021",
-    comment:
-      "This is art. This is inexplicable magic expressed in the purest way, verything that makes up this majestic work deserves reveerence. Let us appreciate this for what it is and what it contains.",
-  },
-];
+// going to get the comment form API instead of hardcoding it:
+// get the comments and add it to the page
+let commentsArray = [];
+
+const getComments = () => {
+  axios
+    .get(`${API_BASE_URL}/comments?api_key=${API_KEY}`) //getting the data from API with axios
+    .then((response) => {
+      console.log(response.data);
+      console.log(response);
+      commentsArray = response.data; // making the empty array equal to the comments in the API
+    
+
+      // for loop through the comments array in the API(in reverse order as iterating ++ makes the comments from the API appear in reverse)
+      for (let i = 2; i < commentsArray.length; i--) {
+        comment = commentsArray[i];
+
+        // call the function within the loop, to print ach key value pair:
+        displayComment(comment);
+      }
+
+      console.log(commentsArray);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+getComments();
+
 
 const commentContainerEl = document.querySelector(".comments__container");
 
@@ -47,7 +58,8 @@ const displayComment = (comment) => {
   // then create a p element
   const dateEl = document.createElement("p");
   dateEl.classList.add("comments__date");
-  dateEl.innerText = comment.date;
+  // dateEl.innerText = comment.date;
+  dateEl.innerText = comment.timestamp // changed the date to a time stamp
   divWrapper.appendChild(dateEl);
   mainDiv.appendChild(divWrapper); //now appending the date and name to the main div(which is before)
 
@@ -71,12 +83,12 @@ const displayComment = (comment) => {
 
 // need to for loop through the array
 
-for (let i = 0; i < commentsArray.length; i++) {
-  comment = commentsArray[i];
+// for (let i = 0; i < commentsArray.length; i++) {
+//   comment = commentsArray[i];
 
-  // call the function within the loop, to print ach key value pair:
-  displayComment(comment);
-}
+//   // call the function within the loop, to print ach key value pair:
+//   displayComment(comment);
+// }
 
 // need to create a new list and push it to the original list
 
@@ -97,7 +109,7 @@ const handlingSubmit = (action) => {
     {
       // selecting the class'formClass' , then selecting the name 'fname' and then getting the value of the input
       name: formClass.fname.value,
-      date: new Date().toLocaleDateString(), // this gives the updated time date
+      timestamp: new Date().toLocaleDateString(), // this gives the updated time date
       comment: formClass.fcomment.value,
     },
   ];
