@@ -1,36 +1,44 @@
-const shows = [
-  {
-    // check the arrays again
-    date: "Mon Sept 06 2021",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Tue Sept 21 2021",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Oct 15 2021",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Nov 06 2021",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Nov 26 2021",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Wed Dec 15 2021",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
+// API variables
+const API_BASE_URL = "https://project-1-api.herokuapp.com";
+const API_KEY = "8141f882-7414-460c-ae38-99f5be2e81da";
+
+// console.log(axios);
+
+let shows = [];
+
+// const shows = [
+//   {
+//     // check the arrays again
+//     date: "Mon Sept 06 2021",
+//     venue: "Ronald Lane",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Tue Sept 21 2021",
+//     venue: "Pier 3 East",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Fri Oct 15 2021",
+//     venue: "View Lounge",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Sat Nov 06 2021",
+//     venue: "Hyatt Agency",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Fri Nov 26 2021",
+//     venue: "Moscow Center",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Wed Dec 15 2021",
+//     venue: "Press Club",
+//     location: "San Francisco, CA",
+//   },
+// ];
 
 // selected the 'shows__container'
 const containerEl = document.querySelector(".shows__container");
@@ -70,7 +78,7 @@ const fill_shows = (show) => {
   // add a class:
   yearEl.classList.add("shows__year", "shows__pTag");
   // now assigning the year(modifying the text) to the value of the key 'date'
-  yearEl.innerText = show.date;
+  yearEl.innerText = new Date(show.date).toLocaleDateString();
   divDate.appendChild(yearEl); // appending the label to the small div
   // unorderedListEl.append(yearEl);
 
@@ -88,7 +96,7 @@ const fill_shows = (show) => {
   // add a class to the element,also added a common class 'shows__label'
   venueTagEl.classList.add("shows__venue", "shows__pTag");
   // then modify the created element
-  venueTagEl.innerText = show.venue;
+  venueTagEl.innerText = show["place"];
   // now append the venue value to the div:
   divVenue.appendChild(venueTagEl);
 
@@ -106,7 +114,7 @@ const fill_shows = (show) => {
   // add a class to the created element
   locationTagEl.classList.add("shows__location", "shows__pTag");
   // now modify the element by assigning it to the value of the object
-  locationTagEl.innerText = show.location;
+  locationTagEl.innerText = show["location"];
   // now append the class to the div
   divLocation.appendChild(locationTagEl);
 
@@ -134,12 +142,25 @@ const fill_shows = (show) => {
   containerEl.appendChild(article);
 };
 
-for (let i = 0; i < shows.length; i++) {
-  // iterating though each object
-  const show = shows[i];
-  // and call the function within the loop
-  fill_shows(show);
-}
+axios
+  .get(`${API_BASE_URL}/showdates?api_key=${API_KEY}`)
+  .then((response) => {
+    // console.log((response.data[0]["place"])); //accesing the value of "place"
+    console.log(response.data);
+    shows = response.data;
+
+    // looping through the api data and displaying
+    for (let i = 0; i < shows.length; i++) {
+      // console.log(i);
+      console.log(shows[i]);
+      fill_shows(shows[i]); // At this point - the articles are added to the DOM
+    }
+    // adding the row click listnere after we fetched the API data
+    rowClickListener();
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 
 // create a div , these for top 3 headers 'DATE, VENUE,LOCATION'
 const topDiv = document.createElement("div");
@@ -164,6 +185,7 @@ containerEl.insertBefore(topDiv, containerEl.firstChild);
 
 const rowClick = (event) => {
   const article = event.currentTarget; // accessing that event
+  // console.log("another hello");
 
   // Initially the articles are not in a selected state
   const articles = document.querySelectorAll(".shows__article");
@@ -173,14 +195,18 @@ const rowClick = (event) => {
 
   // Add the "selected" class to the clicked article
   article.classList.add("shows__selected");
-  // console.log("hello"); // testing purposes
+  console.log("hello"); // testing purposes
 };
 
+// created a function for the row click listener so that it can be called after the API data is fetched
 
-// Add event listener for clicking
-const articles = document.querySelectorAll(".shows__article");
-// looping through each article
-articles.forEach((article) => {
-  // when that article is selected call the function
-  article.addEventListener("click", rowClick);
-});
+function rowClickListener() {
+  // Add event listener for clicking
+  const articles = document.querySelectorAll(".shows__article");
+
+  // looping through each article
+  articles.forEach((article) => {
+    // when that article is selected call the function
+    article.addEventListener("click", rowClick);
+  });
+}

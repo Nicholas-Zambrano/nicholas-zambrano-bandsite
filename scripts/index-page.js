@@ -19,6 +19,7 @@ const getComments = () => {
       commentsArray.sort(function(x,y){
         return y.timestamp - x.timestamp
       })
+      
 
       // for loop through the comments array in the API(in reverse order as iterating ++ makes the comments from the API appear in reverse)
       // for (let i = 2; i < commentsArray.length; i--) {
