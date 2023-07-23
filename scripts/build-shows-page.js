@@ -6,45 +6,13 @@ const API_KEY = "8141f882-7414-460c-ae38-99f5be2e81da";
 
 let shows = [];
 
-// const shows = [
-//   {
-//     // check the arrays again
-//     date: "Mon Sept 06 2021",
-//     venue: "Ronald Lane",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: "Tue Sept 21 2021",
-//     venue: "Pier 3 East",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: "Fri Oct 15 2021",
-//     venue: "View Lounge",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: "Sat Nov 06 2021",
-//     venue: "Hyatt Agency",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: "Fri Nov 26 2021",
-//     venue: "Moscow Center",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: "Wed Dec 15 2021",
-//     venue: "Press Club",
-//     location: "San Francisco, CA",
-//   },
-// ];
+
 
 // selected the 'shows__container'
 const containerEl = document.querySelector(".shows__container");
 // console.log(containerEl);
 
-const fill_shows = (show) => {
+const fillShows = (show) => {
   // creating an article
   const article = document.createElement("article");
   // add the class for the article
@@ -147,13 +115,13 @@ axios
   .then((response) => {
     // console.log((response.data[0]["place"])); //accesing the value of "place"
     console.log(response.data);
-    shows = response.data;
+    showsAPI = response.data; // the data in the API
 
     // looping through the api data and displaying
-    for (let i = 0; i < shows.length; i++) {
+    for (let i = 0; i < showsAPI.length; i++) {
       // console.log(i);
-      console.log(shows[i]);
-      fill_shows(shows[i]); // At this point - the articles are added to the DOM
+      console.log(showsAPI[i]);
+      fillShows(showsAPI[i]); // At this point - the articles are added to the DOM
     }
     // adding the row click listnere after we fetched the API data
     rowClickListener();

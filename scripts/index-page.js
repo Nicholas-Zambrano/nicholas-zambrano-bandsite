@@ -16,15 +16,14 @@ const getComments = () => {
       // need to sort commentsArray
 
       //  sorted the comments through timestap
-      commentsArray.sort(function(x,y){
-        return y.timestamp - x.timestamp
-      })
-      
+      commentsArray.sort(function (x, y) {
+        return y.timestamp - x.timestamp;
+      });
 
       // for loop through the comments array in the API(in reverse order as iterating ++ makes the comments from the API appear in reverse)
       // for (let i = 2; i < commentsArray.length; i--) {
-        // for(let i =0; i<commentsArray.length;i++){
-        for(let i = commentsArray.length-1; i>=0;i--){
+      // for(let i =0; i<commentsArray.length;i++){
+      for (let i = commentsArray.length - 1; i >= 0; i--) {
         comment = commentsArray[i];
 
         // call the function within the loop, to print ach key value pair:
@@ -38,7 +37,6 @@ const getComments = () => {
     });
 };
 getComments();
-
 
 const commentContainerEl = document.querySelector(".comments__container");
 
@@ -68,7 +66,7 @@ const displayComment = (comment) => {
   const dateEl = document.createElement("p");
   dateEl.classList.add("comments__date");
   // dateEl.innerText = comment.date;
-  dateEl.innerText = new Date(comment.timestamp).toLocaleDateString() // changed the date to a time stamp nad used the 'localeDateString'
+  dateEl.innerText = new Date(comment.timestamp).toLocaleDateString(); // changed the date to a time stamp nad used the 'localeDateString'
   console.log(dateEl);
   divWrapper.appendChild(dateEl);
   mainDiv.appendChild(divWrapper); //now appending the date and name to the main div(which is before)
@@ -115,39 +113,36 @@ const handlingSubmit = (action) => {
 
   // when submitting the button: we need to push a new array that contains the comment to the existing array
 
-  const newComments = 
-    {
-      // selecting the class'formClass' , then selecting the name 'fname' and then getting the value of the input
-      name: formClass.fname.value,
-      // timestamp: new Date(), // this gives the updated time date
-      comment: formClass.fcomment.value,
-      
-    }
-  ;
-
+  const newComments = {
+    // selecting the class'formClass' , then selecting the name 'fname' and then getting the value of the input
+    name: formClass.fname.value,
+    // timestamp: new Date(), // this gives the updated time date
+    comment: formClass.fcomment.value,
+  };
   //  Need to do the post comment!!!
   axios
-  .post(`${API_BASE_URL}/comments?api_key=${API_KEY}`,newComments)  // posting the new comment
-  .then((response)=>{
-    // console.log("comeon");
-    console.log(response.data)
-    displayComment(response.data) // displaying the comment each time i do it onto my website
-  }).catch((error)=>{
-    console.log(error);
-  });
+    .post(`${API_BASE_URL}/comments?api_key=${API_KEY}`, newComments) // posting the new comment
+    .then((response) => {
+      // console.log("comeon");
+      console.log(response.data);
+      displayComment(response.data); // displaying the comment each time i do it onto my website
+      // console.log(response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 
   // console.log(newComments); // this print the array , with the comments e.g {name:"nico", comment:"hello"}
 
   // we want to push this into the original array:
 
-  for (i = 0; i < newComments.length; i++) {
-    const eachValue = newComments[i];
-    commentsArray.unshift(eachValue); // i have pushed it to the original array
-    console.log(commentsArray); // this prints the updated array:
-    displayComment(eachValue); // each time it runs it calls the function
-    // displayComment(comment)
-  }
-  
+  // for (i = 0; i < newComments.length; i++) {
+  //   const eachValue = newComments[i];
+  //   commentsArray.unshift(eachValue); // i have pushed it to the original array
+  //   console.log(commentsArray); // this prints the updated array:
+  //   displayComment(eachValue); // each time it runs it calls the function
+  //   // displayComment(comment)
+  // }
 
   // need to clear the input fields once submitting the button
   formClass.reset();

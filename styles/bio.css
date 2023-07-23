@@ -21,19 +21,19 @@ body {
 
 @font-face {
   font-family: "AvenirNextLTPro";
-  src: url("..//..//Assets/Font/AvenirNextLTPro-Regular.otf") format("opentype"), url("../../Assets/Font/Alternative files/AvenirNextLTPro-Regular.ttf") format("truetype");
+  src: url("../../Assets/Font/AvenirNextLTPro-Regular.otf") format("opentype"), url("../../Assets/Font/Alternative files/AvenirNextLTPro-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "AvenirNextLTPro";
-  src: url("..//..//Assets/Font/AvenirNextLTPro-Demi.otf") format("opentype"), url("..//..//Assets/Font/Alternative files/AvenirNextLTPro-Demi.ttf") format("truetype");
+  src: url("../../Assets/Font/AvenirNextLTPro-Demi.otf") format("opentype"), url("../../Assets/Font/Alternative files/AvenirNextLTPro-Demi") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "AvenirNextLTPro";
-  src: url("..//..//Assets/Font/AvenirNextLTPro-Bold.otf") format("opentype"), url("../..//Assets/Font/Alternative files/AvenirNextLTPro-Bold") format("truetype");
+  src: url("../../Assets/Font/AvenirNextLTPro-Bold.otf") format("opentype"), url("../../Assets/Font/Alternative files/AvenirNextLTPro-Bold") format("truetype");
   font-weight: 700;
   font-style: bold;
 }
@@ -144,7 +144,7 @@ body {
 .hero {
   height: 20rem;
   width: 100%;
-  background-image: url("../Assets/Images/hero-bio.jpg");
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("../Assets/Images/hero-bio.jpg");
   background-position: center;
   background-size: cover;
 }
