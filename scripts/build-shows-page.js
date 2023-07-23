@@ -2,15 +2,10 @@
 const API_BASE_URL = "https://project-1-api.herokuapp.com";
 const API_KEY = "8141f882-7414-460c-ae38-99f5be2e81da";
 
-// console.log(axios);
-
 let shows = [];
-
-
 
 // selected the 'shows__container'
 const containerEl = document.querySelector(".shows__container");
-// console.log(containerEl);
 
 const fillShows = (show) => {
   // creating an article
@@ -21,8 +16,6 @@ const fillShows = (show) => {
   // now need to create a wrapper : for each show info
   const section = document.createElement("section");
   section.classList.add("shows__wrapper");
-
-  // THIS IS FOR THE UNORDERED LIST:
 
   // going to create 3 small divs:
   const divDate = document.createElement("div");
@@ -55,9 +48,6 @@ const fillShows = (show) => {
   h3VenueEl.innerText = "VENUE";
   // now append the h3 'venue' to the div
   divVenue.appendChild(h3VenueEl);
-  // unorderedListEl.append(h3VenueEl);
-
-  // now create the venue from the objects
 
   // create the element
   const venueTagEl = document.createElement("p");
@@ -113,17 +103,15 @@ const fillShows = (show) => {
 axios
   .get(`${API_BASE_URL}/showdates?api_key=${API_KEY}`)
   .then((response) => {
-    // console.log((response.data[0]["place"])); //accesing the value of "place"
     console.log(response.data);
     showsAPI = response.data; // the data in the API
 
     // looping through the api data and displaying
     for (let i = 0; i < showsAPI.length; i++) {
-      // console.log(i);
       console.log(showsAPI[i]);
       fillShows(showsAPI[i]); // At this point - the articles are added to the DOM
     }
-    // adding the row click listnere after we fetched the API data
+    // adding the row click listener after we fetched the API data
     rowClickListener();
   })
   .catch((error) => {
@@ -153,7 +141,6 @@ containerEl.insertBefore(topDiv, containerEl.firstChild);
 
 const rowClick = (event) => {
   const article = event.currentTarget; // accessing that event
-  // console.log("another hello");
 
   // Initially the articles are not in a selected state
   const articles = document.querySelectorAll(".shows__article");
@@ -163,7 +150,6 @@ const rowClick = (event) => {
 
   // Add the "selected" class to the clicked article
   article.classList.add("shows__selected");
-  console.log("hello"); // testing purposes
 };
 
 // created a function for the row click listener so that it can be called after the API data is fetched
