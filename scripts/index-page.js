@@ -97,7 +97,7 @@ const displayComment = (comment) => {
     commentContainerEl.appendChild(articleEl);
 
     //  you can use inserbefore but then you need to swap the tables manually in the original array
-    // making that article with new input comment be placed above the first element (i.e the first defaul comment)
+    // making that article with new input comment be placed above the first element (i.e the first default comment)
     // making that 'articleEl' be the first child of the commentContainer
     commentContainerEl.insertBefore(articleEl, commentContainerEl.firstChild);
 
@@ -120,7 +120,6 @@ const handlingSubmit = (action) => {
   const newComments = {
     // selecting the class'formClass' , then selecting the name 'fname' and then getting the value of the input
     name: formClass.fname.value,
-    // timestamp: new Date(), // this gives the updated time date
     comment: formClass.fcomment.value,
   };
   //  Need to do the post comment!!!
@@ -147,33 +146,4 @@ const formEl = document.querySelector(".form");
 // were are adding an event listener to the selected class, and apply a function on the second argument when '.form' class is clicked
 formEl.addEventListener("submit", handlingSubmit);
 
-// creating a function to convert timestamp to relative times
 
-let latestTime = 1690118686018;
-const currentTime = Date.now();
-const timeDifference = currentTime - latestTime;
-// create variabless in miliseconds
-
-const second = 1000;
-const minute = 60000;
-const hour = 36000000;
-const day = 86400000;
-const week = 604800000;
-const month = 2629743000;
-const year = 31556926000;
-
-if (timeDifference < year && timeDifference > month) {
-  console.log("year");
-  latestTime = Math.floor(timeDifference / year);
-  console.log(`${latestTime} years ago`);
-} else if (timeDifference < minute) {
-  latestTime = Math.floor(timeDifference / second);
-  console.log(`${latestTime} seconds ago`);
-} else if (timeDifference < hour) {
-  latestTime = Math.floor(timeDifference / second);
-  console.log(`${latestTime} minutes ago`);
-  if (timeDifference > 1900) {
-    latestTime = Math.floor(timeDifference / (60 * 24));
-    console.log(`${latestTime} years ago`);
-  }
-}
