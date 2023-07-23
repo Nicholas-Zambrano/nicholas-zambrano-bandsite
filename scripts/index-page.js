@@ -81,6 +81,27 @@ const displayComment = (comment) => {
     writingComments.innerText = comment.comment;
     mainDiv.appendChild(writingComments); // appending the comment underneath the name and date
 
+    const likediv = document.createElement("div");
+    likediv.classList.add("comments__likeWrapper");
+    
+    const likeImg = document.createElement("div");
+    likeImg.classList.add("comments__divImg");  
+    likediv.appendChild(likeImg)
+
+ 
+    const likeNum = document.createElement("p")
+    likeNum.classList.add("comments__likeNum");
+    likeNum.innerText = comment.likes;
+    likediv.appendChild(likeNum);
+
+    mainDiv.appendChild(likediv)
+
+
+    
+
+    mainDiv.appendChild(likediv)
+
+
     articleEl.appendChild(imgwrapper);
 
     articleEl.appendChild(mainDiv);
@@ -167,3 +188,37 @@ const handlingSubmit = (action) => {
 const formEl = document.querySelector(".form");
 // were are adding an event listener to the selected class, and apply a function on the second argument when '.form' class is clicked
 formEl.addEventListener("submit", handlingSubmit);
+
+
+// creating a function to convert timestamp to relative times
+
+let latestTime = 1690118686018;
+const currentTime = Date.now();
+const timeDifference = currentTime-latestTime
+// create variabless in miliseconds 
+
+const second = 1000
+const minute = 60000;
+const hour = 36000000;
+const day = 86400000;
+const week = 604800000;
+const month = 2629743000;
+const year = 31556926000;
+
+if(timeDifference < year && timeDifference > month){
+  console.log("year");
+  latestTime = Math.floor(timeDifference/year);
+  console.log(`${latestTime} years ago`);
+}
+else if(timeDifference<minute){
+  latestTime=Math.floor(timeDifference/second)
+  console.log(`${latestTime} seconds ago`);
+}
+else if(timeDifference<hour){
+  latestTime= Math.floor(timeDifference/second);
+  console.log(`${latestTime} minutes ago`);
+  if(timeDifference>1900){
+    latestTime = Math.floor(timeDifference /(60*24))
+    console.log(`${latestTime} years ago` );
+  }
+}

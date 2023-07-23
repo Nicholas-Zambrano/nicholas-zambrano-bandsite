@@ -14,26 +14,45 @@
 
   &__title {
     //   for the header 'Join the conversation'
-    @include desktop{
-    
-    max-width: 1044px;
-    margin: auto;
-}}
-    h1 {
-      font-weight: 600;
-
-      @include desktop {
-        font-size: 3.6rem;
-        line-height: 6.8rem;
-      }
+    @include desktop {
+      max-width: 1044px;
+      margin: auto;
     }
-  
+  }
+  h1 {
+    font-weight: 600;
+
+    @include desktop {
+      font-size: 3.6rem;
+      line-height: 6.8rem;
+    }
+  }
+
   //   this is the comments input wrapper, to put the inputs in teh centr
   &__inputWrapper {
     @include desktop {
       display: flex;
       justify-content: center;
     }
+  }
+
+  &__likeWrapper {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+  // this is for the like image
+  &__divImg {
+    height: 2rem;
+    width: 2rem;
+    background-image: url("../../Assets/Icons/SVG/icon-like.svg");
+    background-position: center;
+    background-size: cover;
+  }
+
+  //  this is for the like number
+  &__likeNum {
+    font-size: 2rem;
   }
 
   .form {

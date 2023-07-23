@@ -427,6 +427,7 @@ body {
 .gallery__img {
   width: 28rem;
   padding-bottom: 2rem;
+  filter: grayscale(100%);
 }
 @media screen and (min-width: 768px) {
   .gallery__img {
@@ -434,6 +435,10 @@ body {
     display: flex;
     justify-content: space-around;
   }
+}
+.gallery__img:hover {
+  filter: none;
+  filter: brightness(125%);
 }
 .gallery__heading, .gallery__wrapper {
   max-width: 100%;
@@ -478,6 +483,21 @@ body {
     display: flex;
     justify-content: center;
   }
+}
+.comments__likeWrapper {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+.comments__divImg {
+  height: 2rem;
+  width: 2rem;
+  background-image: url("../../Assets/Icons/SVG/icon-like.svg");
+  background-position: center;
+  background-size: cover;
+}
+.comments__likeNum {
+  font-size: 2rem;
 }
 .comments .form {
   display: flex;

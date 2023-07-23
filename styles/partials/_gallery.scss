@@ -46,25 +46,31 @@
     }
   }
 
-//   div clas for the images
+  //   div class for the images
   &__images {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
 
-//   Each image
+  //   Each image is in a gray scale
   &__img {
     width: 28rem;
     padding-bottom: 2rem;
+    filter: grayscale(100%);
     @include tablet {
       width: 31%;
       display: flex;
       justify-content: space-around;
     }
   }
+  // when hovering over the image it goes back to its default
+  &__img:hover{
+    filter: none;
+    filter: brightness(125%);
+  }
 
-//    Making the heading and image wrapper to have a max width
+  //    Making the heading and image wrapper to have a max width
   &__heading,
   &__wrapper {
     max-width: 100%;
