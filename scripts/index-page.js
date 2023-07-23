@@ -38,55 +38,64 @@ const getComments = () => {
 };
 getComments();
 
+//  keeps tracks of timestamps of comments that are already displayed on the webpage
+let displayedTimestamps = [];
+
 const commentContainerEl = document.querySelector(".comments__container");
 
 const displayComment = (comment) => {
-  const articleEl = document.createElement("article");
-  articleEl.classList.add("comments__article");
+  // if that comment timestamp is not in the list tracker then create the elements to the page
+  if (!displayedTimestamps.includes(comment.timestamp)) {
+    const articleEl = document.createElement("article");
+    articleEl.classList.add("comments__article");
 
-  // then create a section wrapper which will have the content
+    // then create a section wrapper which will have the content
 
-  const imgwrapper = document.createElement("div");
-  imgwrapper.classList.add("comments__image-wrapper");
+    const imgwrapper = document.createElement("div");
+    imgwrapper.classList.add("comments__image-wrapper");
 
-  const mainDiv = document.createElement("div");
-  mainDiv.classList.add("comments__main-wrapper");
+    const mainDiv = document.createElement("div");
+    mainDiv.classList.add("comments__main-wrapper");
 
-  // then create a div for the h3 and p tag
-  const divWrapper = document.createElement("div");
-  divWrapper.classList.add("comments__nameDate");
+    // then create a div for the h3 and p tag
+    const divWrapper = document.createElement("div");
+    divWrapper.classList.add("comments__nameDate");
 
-  // then create h3 element
-  const nameHeader = document.createElement("h3");
-  nameHeader.classList.add("comments__name");
-  nameHeader.innerText = comment.name;
-  divWrapper.appendChild(nameHeader);
+    // then create h3 element
+    const nameHeader = document.createElement("h3");
+    nameHeader.classList.add("comments__name");
+    nameHeader.innerText = comment.name;
+    divWrapper.appendChild(nameHeader);
 
-  // then create a p element
-  const dateEl = document.createElement("p");
-  dateEl.classList.add("comments__date");
-  // dateEl.innerText = comment.date;
-  dateEl.innerText = new Date(comment.timestamp).toLocaleDateString(); // changed the date to a time stamp nad used the 'localeDateString'
-  console.log(dateEl);
-  divWrapper.appendChild(dateEl);
-  mainDiv.appendChild(divWrapper); //now appending the date and name to the main div(which is before)
+    // then create a p element
+    const dateEl = document.createElement("p");
+    dateEl.classList.add("comments__date");
+    // dateEl.innerText = comment.date;
+    dateEl.innerText = new Date(comment.timestamp).toLocaleDateString(); // changed the date to a time stamp nad used the 'localeDateString'
+    console.log(dateEl);
+    divWrapper.appendChild(dateEl);
+    mainDiv.appendChild(divWrapper); //now appending the date and name to the main div(which is before)
 
-  const writingComments = document.createElement("p");
-  writingComments.classList.add("comments__comment");
-  writingComments.innerText = comment.comment;
-  mainDiv.appendChild(writingComments); // appending the comment underneath the name and date
+    const writingComments = document.createElement("p");
+    writingComments.classList.add("comments__comment");
+    writingComments.innerText = comment.comment;
+    mainDiv.appendChild(writingComments); // appending the comment underneath the name and date
 
-  articleEl.appendChild(imgwrapper);
+    articleEl.appendChild(imgwrapper);
 
-  articleEl.appendChild(mainDiv);
-  // articleEl.appendChild(writingComments);
+    articleEl.appendChild(mainDiv);
+    // articleEl.appendChild(writingComments);
 
-  commentContainerEl.appendChild(articleEl);
+    commentContainerEl.appendChild(articleEl);
 
-  //  you can use inserbefore but then you need to swap the tables manually in the original array
-  // making that article with new input comment be placed above the first element (i.e the first defaul comment)
-  // making that 'articleEl' be the first child of the commentContainer
-  commentContainerEl.insertBefore(articleEl, commentContainerEl.firstChild);
+    //  you can use inserbefore but then you need to swap the tables manually in the original array
+    // making that article with new input comment be placed above the first element (i.e the first defaul comment)
+    // making that 'articleEl' be the first child of the commentContainer
+    commentContainerEl.insertBefore(articleEl, commentContainerEl.firstChild);
+
+    //  after displaying the comment, push it to the tracking list to prevent that same comment being duplicated
+    displayedTimestamps.push(comment.timestamp);
+  }
 };
 
 // need to for loop through the array
@@ -123,10 +132,16 @@ const handlingSubmit = (action) => {
   axios
     .post(`${API_BASE_URL}/comments?api_key=${API_KEY}`, newComments) // posting the new comment
     .then((response) => {
-      // console.log("comeon");
-      console.log(response.data);
-      displayComment(response.data); // displaying the comment each time i do it onto my website
-      // console.log(response.data);
+
+      // checling if the submitted comment's timestamp is not present in the traker list
+      if (!displayedTimestamps.includes(response.data.timestamp)) {
+        // console.log("comeon");
+        console.log(response.data);
+        // getComments();
+        displayComment(response.data); // displaying the comment each time i do it onto my website
+        // console.log(response.data);
+        getComments();
+      }
     })
     .catch((error) => {
       console.log(error);
@@ -144,6 +159,7 @@ const handlingSubmit = (action) => {
   //   // displayComment(comment)
   // }
 
+  //getComments() //this display it again
   // need to clear the input fields once submitting the button
   formClass.reset();
 };
